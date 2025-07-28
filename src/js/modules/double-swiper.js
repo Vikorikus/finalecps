@@ -1,8 +1,8 @@
 let brandsSwiper = null
 let techniqueSwiper = null
-const swiperPagination = document.querySelector('.swiper-pagination')
+
 function initSwipers() {
-  // === Свайпер брендов ===
+  // Свайпер брендов
   const brandsContainer = document.querySelector('.brands__swiper')
   if (brandsContainer) {
     if (window.innerWidth <= 768) {
@@ -27,12 +27,16 @@ function initSwipers() {
       if (brandsSwiper) {
         brandsSwiper.destroy(true, true)
         brandsSwiper = null
-        swiperPagination.innerHTML = ''
+        // Удаляем точки свайпера
+        const brandsPagination = document.querySelector('.brands__pagination')
+        if (brandsPagination) {
+          brandsPagination.innerHTML = ''
+        }
       }
     }
   }
 
-  // === Свайпер техники ===
+  // Свайпер техники
   const techniqueContainer = document.querySelector('.repair-technique__swiper')
   if (techniqueContainer) {
     if (window.innerWidth <= 768) {
@@ -57,11 +61,17 @@ function initSwipers() {
       if (techniqueSwiper) {
         techniqueSwiper.destroy(true, true)
         techniqueSwiper = null
-        swiperPagination.innerHTML = ''
+        // Удаляем точки свайпера
+        const techniquePagination = document.querySelector(
+          '.repair-technique__pagination'
+        )
+        if (techniquePagination) {
+          techniquePagination.innerHTML = ''
+        }
       }
     }
   }
 }
 
-// инициализация свайперов
+// инициализация свайпера при изменении разрешения
 window.addEventListener('resize', initSwipers)
