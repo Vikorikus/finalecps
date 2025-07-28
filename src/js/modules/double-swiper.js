@@ -73,9 +73,6 @@ function initSwipers() {
   }
 }
 
-// Инициализация при загрузке страницы
-document.addEventListener('DOMContentLoaded', initSwipers)
-
 // Инициализация при полной загрузке всех ресурсов
 window.addEventListener('load', initSwipers)
 
