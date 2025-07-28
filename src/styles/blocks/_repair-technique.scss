@@ -54,6 +54,9 @@
     &__slide:not(:nth-child(-n + 3)) {
       display: none;
     }
+    &__pagination {
+      display: none;
+    }
   }
 }
 @media (min-width: 1119px) {

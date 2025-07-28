@@ -62,6 +62,9 @@
     &__slide:not(:nth-child(-n + 6)) {
       display: none;
     }
+    &__pagination {
+      display: none;
+    }
   }
 }
 
