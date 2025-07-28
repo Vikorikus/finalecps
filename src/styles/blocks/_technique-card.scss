@@ -1,0 +1,81 @@
+@use '../variables.scss' as *;
+
+.technique-card {
+  background-color: $bg-color-white;
+  width: 240px;
+  height: 160px;
+  border-radius: 6px;
+  border: 1px solid #eaeaea;
+  font-family: 'TT Lakes Medium';
+  font-weight: 500;
+  font-style: normal;
+  font-size: 16px;
+  padding: 16px;
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+  transition: box-shadow 0.3s ease;
+
+  &:hover {
+    box-shadow: 0 0 8px 2px rgba(255, 62, 121, 0.15);
+  }
+
+  &::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: 6px;
+    pointer-events: none;
+    z-index: 0;
+    opacity: 0;
+    background: linear-gradient(
+      90deg,
+      rgba(255, 62, 121, 0.15) 0%,
+      rgba(255, 62, 121, 0) 40%,
+      rgba(255, 62, 121, 0.15) 60%,
+      rgba(255, 62, 121, 0) 100%
+    );
+    background-size: 400% 400%;
+    transition: opacity 0.3s ease;
+  }
+
+  &:hover::after {
+    opacity: 1;
+    animation: glowWave 4s linear infinite;
+  }
+
+  > * {
+    position: relative;
+    z-index: 1;
+  }
+
+  &__text {
+    line-height: 150%;
+    letter-spacing: -0.01em;
+  }
+
+  &__btn {
+    align-self: flex-end;
+  }
+}
+
+@keyframes glowWave {
+  0% {
+    background-position: 0% 50%;
+  }
+  100% {
+    background-position: 100% 50%;
+  }
+}
+
+@media (min-width: 768px) {
+  .technique-card {
+    width: 224px;
+  }
+}
+
+@media (min-width: 1120px) {
+  .technique-card {
+    width: 240px;
+  }
+}

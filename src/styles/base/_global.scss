@@ -1,0 +1,9 @@
+//внешний вид ссылок обнуляем
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+* {
+  -webkit-tap-highlight-color: transparent;
+}

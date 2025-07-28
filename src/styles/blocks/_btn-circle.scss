@@ -1,0 +1,27 @@
+@use '../variables.scss' as *;
+
+.btn-circle {
+  width: 40px;
+  height: 40px;
+  background-color: $accent-color;
+  border: none;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.3s ease;
+  cursor: pointer;
+  outline: none;
+
+  @media (hover: hover) {
+    &:hover {
+      transform: scale(1.2);
+    }
+  }
+
+  @media (hover: none) {
+    &:active {
+      transform: scale(1.2);
+    }
+  }
+}
